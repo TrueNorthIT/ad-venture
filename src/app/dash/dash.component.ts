@@ -88,7 +88,12 @@ export class DashComponent {
     switch (step.type)
     {
         case 'form' :
-          this.dialog.open(FormComponent);
+          this.dialog.open(FormComponent,
+            {
+              height: '800px',
+              width: '600px',
+            }
+            );
           break;
         case 'docupload' :
           this.dialog.open(UploadComponent);
