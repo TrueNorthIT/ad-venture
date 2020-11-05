@@ -29,5 +29,35 @@ export class DashComponent {
     })
   );
 
+  products = [
+    {
+      title : 'Growth Grant',
+      steps : [
+        {
+          title : 'Complete Growth Grant application form',
+          type : 'form'
+        },
+        {
+          title : 'Upload proof of identity',
+          type : 'docupload'
+        },
+        {
+          title : 'Sign agreement',
+          type : 'sign'
+        },
+        {
+          title : 'Accept welcome appointment',
+          type : 'appt'
+        }
+      ]
+    },
+    {
+      title : 'Northen MAX3'
+    },
+    {
+      title : 'One-to-one mentoring'
+    }
+];
+
   constructor(private breakpointObserver: BreakpointObserver) {}
 }
