@@ -10,6 +10,12 @@ export class FormComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+
+    window.addEventListener('load', function() {
+  //    renderSurvey('surveyDiv', 'Bert', 'Hair', 'bert.hair@contoso.com', 'Product Overview');
+  }, false);
+
+
   }
 
 }

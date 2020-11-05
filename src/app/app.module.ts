@@ -21,6 +21,7 @@ import { MatFileUploadModule } from 'mat-file-upload';
 import {  MatDialogModule } from '@angular/material/dialog';
 import { FormComponent } from './form/form.component';
 import { AppointmentComponent } from './appointment/appointment.component';
+import { Dash2Component } from './dash2/dash2.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { AppointmentComponent } from './appointment/appointment.component';
     DashComponent,
     UploadComponent,
     FormComponent,
-    AppointmentComponent
+    AppointmentComponent,
+    Dash2Component
   ],
   imports: [
     BrowserModule,

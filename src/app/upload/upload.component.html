@@ -1,8 +1,16 @@
-<mat-file-upload
-  [labelText]="'Select a file (or multiple) to upload:'"
-  [selectButtonText]="'Choose File(s)'"
-  [allowMultipleFiles]="true"
-  [showUploadButton]="true"
-  [customSvgIcon]="'close_custom'"
->
-</mat-file-upload>
+<mat-card class="example-card">
+  <mat-card-header>
+
+    <div mat-card-avatar class="example-header-image">
+      <mat-icon>attach_file</mat-icon>
+    </div>
+    <mat-card-title>Upload file</mat-card-title>
+    <mat-card-subtitle>Please upload a file to complete this step</mat-card-subtitle>
+  </mat-card-header>
+
+  <mat-card-content>
+    <mat-file-upload [labelText]="'Select a file (or multiple) to upload:'" [selectButtonText]="'Choose File(s)'"
+      [allowMultipleFiles]="true" [showUploadButton]="true" [customSvgIcon]="'close_custom'">
+    </mat-file-upload>
+  </mat-card-content>
+</mat-card>

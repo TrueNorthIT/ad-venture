@@ -71,8 +71,18 @@ export class DashComponent {
   ];
 
   constructor(private breakpointObserver: BreakpointObserver, public dialog: MatDialog) { }
-  // tslint:disable-next-line: typedef
 
+  width$ = this.breakpointObserver.observe(Breakpoints.Handset).pipe(
+    map(({ matches }) => {
+      if (matches) {
+        return 2;
+      }
+
+      return 1;
+    })
+  );
+
+  // tslint:disable-next-line: typedef
   openDialog(step) {
 
     switch (step.type)
