@@ -1,6 +1,10 @@
 import { Component } from '@angular/core';
 import { map } from 'rxjs/operators';
 import { Breakpoints, BreakpointObserver } from '@angular/cdk/layout';
+import {MatDialog} from '@angular/material/dialog';
+import { UploadComponent } from '../upload/upload.component';
+import { FormComponent } from '../form/form.component';
+import { AppointmentComponent } from '../appointment/appointment.component';
 
 @Component({
   selector: 'app-dash',
@@ -8,27 +12,6 @@ import { Breakpoints, BreakpointObserver } from '@angular/cdk/layout';
   styleUrls: ['./dash.component.scss']
 })
 export class DashComponent {
-  /** Based on the screen size, switch from standard to one column per row */
-  cards = this.breakpointObserver.observe(Breakpoints.Handset).pipe(
-    map(({ matches }) => {
-      if (matches) {
-        return [
-          { title: 'Card 1', cols: 1, rows: 1 },
-          { title: 'Card 2', cols: 1, rows: 1 },
-          { title: 'Card 3', cols: 1, rows: 1 },
-          { title: 'Card 4', cols: 1, rows: 1 }
-        ];
-      }
-
-      return [
-        { title: 'Card 1', cols: 2, rows: 1 },
-        { title: 'Card 2', cols: 1, rows: 1 },
-        { title: 'Card 3', cols: 1, rows: 2 },
-        { title: 'Card 4', cols: 1, rows: 1 }
-      ];
-    })
-  );
-
   products = [
     {
       title: 'Growth Grant',
@@ -87,5 +70,22 @@ export class DashComponent {
     }
   ];
 
-  constructor(private breakpointObserver: BreakpointObserver) { }
+  constructor(private breakpointObserver: BreakpointObserver, public dialog: MatDialog) { }
+  // tslint:disable-next-line: typedef
+
+  openDialog(step) {
+
+    switch (step.type)
+    {
+        case 'form' :
+          this.dialog.open(FormComponent);
+          break;
+        case 'docupload' :
+          this.dialog.open(UploadComponent);
+          break;
+        case 'appt' :
+          this.dialog.open(AppointmentComponent);
+          break;
+    }
+  }
 }

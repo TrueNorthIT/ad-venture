@@ -17,13 +17,19 @@ import { MatCardModule } from '@angular/material/card';
 import { MatMenuModule } from '@angular/material/menu';
 import { UploadComponent } from './upload/upload.component';
 import { DragDropModule } from '@angular/cdk/drag-drop';
+import { MatFileUploadModule } from 'mat-file-upload';
+import {  MatDialogModule } from '@angular/material/dialog';
+import { FormComponent } from './form/form.component';
+import { AppointmentComponent } from './appointment/appointment.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavComponent,
     DashComponent,
-    UploadComponent
+    UploadComponent,
+    FormComponent,
+    AppointmentComponent
   ],
   imports: [
     BrowserModule,
@@ -38,7 +44,9 @@ import { DragDropModule } from '@angular/cdk/drag-drop';
     MatGridListModule,
     MatCardModule,
     MatMenuModule,
-    DragDropModule
+    MatFileUploadModule,
+    DragDropModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]

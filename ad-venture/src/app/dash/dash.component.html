@@ -23,8 +23,8 @@
               <div mat-line>{{step.title}}</div>
             </mat-list-item>
           </mat-list> -->
-          <mat-selection-list #shoes [multiple]="false">
-            <mat-list-option  *ngFor="let step of product.steps" [value]="step">
+          <mat-selection-list [multiple]="false">
+            <mat-list-option (click)="openDialog(step)" *ngFor="let step of product.steps" [value]="step">
               <mat-icon mat-list-icon>{{step.icon}}</mat-icon>
               <div style=" text-align: left;">
               {{step.title}}
