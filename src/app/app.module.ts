@@ -22,6 +22,8 @@ import {  MatDialogModule } from '@angular/material/dialog';
 import { FormComponent } from './form/form.component';
 import { AppointmentComponent } from './appointment/appointment.component';
 import { Dash2Component } from './dash2/dash2.component';
+import { TreeComponent } from './tree/tree.component';
+import { MatTreeModule } from '@angular/material/tree';
 
 @NgModule({
   declarations: [
@@ -31,7 +33,8 @@ import { Dash2Component } from './dash2/dash2.component';
     UploadComponent,
     FormComponent,
     AppointmentComponent,
-    Dash2Component
+    Dash2Component,
+    TreeComponent
   ],
   imports: [
     BrowserModule,
@@ -48,7 +51,8 @@ import { Dash2Component } from './dash2/dash2.component';
     MatMenuModule,
     MatFileUploadModule,
     DragDropModule,
-    MatDialogModule
+    MatDialogModule,
+    MatTreeModule
   ],
   providers: [],
   bootstrap: [AppComponent]
