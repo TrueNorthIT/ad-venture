@@ -24,6 +24,7 @@ import { AppointmentComponent } from './appointment/appointment.component';
 import { Dash2Component } from './dash2/dash2.component';
 import { TreeComponent } from './tree/tree.component';
 import { MatTreeModule } from '@angular/material/tree';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 @NgModule({
   declarations: [
@@ -52,7 +53,8 @@ import { MatTreeModule } from '@angular/material/tree';
     MatFileUploadModule,
     DragDropModule,
     MatDialogModule,
-    MatTreeModule
+    MatTreeModule,
+    FlexLayoutModule
   ],
   providers: [],
   bootstrap: [AppComponent]
