@@ -7,6 +7,7 @@ import { FormComponent } from '../form/form.component';
 import { AppointmentComponent } from '../appointment/appointment.component';
 import { EventData } from 'ngx-event-calendar/lib/interface/event-data';
 import { ApplyComponent } from '../apply/apply.component';
+import { SignComponent } from '../sign/sign.component';
 
 @Component({
   selector: 'app-dash',
@@ -118,6 +119,9 @@ export class DashComponent {
         case 'docupload' :
           this.dialog.open(UploadComponent);
           break;
+        case 'sign' :
+            this.dialog.open(SignComponent);
+            break;
         case 'appt' :
           this.dialog.open(AppointmentComponent);
           break;

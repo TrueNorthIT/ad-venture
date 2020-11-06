@@ -31,6 +31,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { MatRadioModule } from '@angular/material/radio';
 import { ReactiveFormsModule } from '@angular/forms';
+import { SignComponent } from './sign/sign.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     AppointmentComponent,
     Dash2Component,
     TreeComponent,
-    ApplyComponent
+    ApplyComponent,
+    SignComponent
   ],
   imports: [
     BrowserModule,
