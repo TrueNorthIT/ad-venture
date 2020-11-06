@@ -25,6 +25,12 @@ import { Dash2Component } from './dash2/dash2.component';
 import { TreeComponent } from './tree/tree.component';
 import { MatTreeModule } from '@angular/material/tree';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import {NgxEventCalendarModule} from 'ngx-event-calendar';
+import { ApplyComponent } from './apply/apply.component';
+import { MatInputModule } from '@angular/material/input';
+import { MatSelectModule } from '@angular/material/select';
+import { MatRadioModule } from '@angular/material/radio';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -35,7 +41,8 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     FormComponent,
     AppointmentComponent,
     Dash2Component,
-    TreeComponent
+    TreeComponent,
+    ApplyComponent
   ],
   imports: [
     BrowserModule,
@@ -54,7 +61,12 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     DragDropModule,
     MatDialogModule,
     MatTreeModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    NgxEventCalendarModule,
+    MatInputModule,
+    MatSelectModule,
+    MatRadioModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -28,7 +28,7 @@
         </mat-card-content>
       </mat-card>
     </mat-grid-tile>
-    <mat-grid-tile  [colspan]="width$ | async" [rowspan]="2">
+    <mat-grid-tile [colspan]="width$ | async" [rowspan]="3">
       <mat-card class="dashboard-card">
         <mat-card-title>
           Messages
@@ -44,13 +44,52 @@
         <mat-card-content class="dashboard-card-content">
           <app-tree></app-tree>
         </mat-card-content>
-
       </mat-card>
-      
-    </mat-grid-tile>
-    <mat-grid-tile  [colspan]="width$ | async" [rowspan]="1">
-      Calender
     </mat-grid-tile>
 
+    <mat-grid-tile [colspan]="width$ | async" [rowspan]="1">
+      <mat-card class="dashboard-card">
+        <mat-card-title>
+          Calender
+          <button mat-icon-button class="more-button" [matMenuTriggerFor]="menu" aria-label="Toggle menu">
+            <mat-icon>more_vert</mat-icon>
+          </button>
+          <mat-menu #menu="matMenu" xPosition="before">
+            <button mat-menu-item>Expand</button>
+            <button mat-menu-item>Remove</button>
+          </mat-menu>
+        </mat-card-title>
+        <mat-card-subtitle>Events</mat-card-subtitle>
+        <mat-card-content class="dashboard-card-content">
+          <ngx-event-calendar [showAddButton]="true" [language]="'en'" [dataSource]="dataArray">
+          </ngx-event-calendar>
+        </mat-card-content>
+      </mat-card>
+    </mat-grid-tile>
+
+    <mat-grid-tile [colspan]="1" [rowspan]="1">
+      <mat-card class="dashboard-card">
+        <mat-card-title>
+          Other Products
+          <button mat-icon-button class="more-button" [matMenuTriggerFor]="menu" aria-label="Toggle menu">
+            <mat-icon>more_vert</mat-icon>
+          </button>
+          <mat-menu #menu="matMenu" xPosition="before">
+            <button mat-menu-item>Expand</button>
+            <button mat-menu-item>Remove</button>
+          </mat-menu>
+        </mat-card-title>
+        <mat-card-subtitle>Select a product and apply for it</mat-card-subtitle>
+        <mat-card-content class="dashboard-card-content">
+          <mat-selection-list #shoes [multiple]="false">
+            <mat-list-option (click)="openProduct(product)" *ngFor="let product of listofproducts" [value]="product">
+              {{product}}
+            </mat-list-option>
+          </mat-selection-list>
+        </mat-card-content>
+      </mat-card>
+    </mat-grid-tile>
+
+    
   </mat-grid-list>
 </div>

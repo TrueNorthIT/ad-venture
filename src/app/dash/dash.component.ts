@@ -5,6 +5,8 @@ import {MatDialog} from '@angular/material/dialog';
 import { UploadComponent } from '../upload/upload.component';
 import { FormComponent } from '../form/form.component';
 import { AppointmentComponent } from '../appointment/appointment.component';
+import { EventData } from 'ngx-event-calendar/lib/interface/event-data';
+import { ApplyComponent } from '../apply/apply.component';
 
 @Component({
   selector: 'app-dash',
@@ -70,7 +72,18 @@ export class DashComponent {
     }
   ];
 
+  listofproducts: string[] = ['Growth Grant', 'Northern MAX3', 'One-to-one mentoring'];
+
   constructor(private breakpointObserver: BreakpointObserver, public dialog: MatDialog) { }
+  dataArray: EventData[] = [
+    {
+      id: 1,
+      startDate: new Date('2020-11-22T21:00:00'),
+      endDate: new Date('2020-11-22T21:00:00'),
+      title: 'test'
+    }
+  ];
+
 
   width$ = this.breakpointObserver.observe(Breakpoints.Handset).pipe(
     map(({ matches }) => {
@@ -81,7 +94,14 @@ export class DashComponent {
       return 1;
     })
   );
-
+  openProduct(product) {
+    this.dialog.open(ApplyComponent,
+      {
+        height: '800px',
+        width: '600px',
+      }
+      );
+  }
   // tslint:disable-next-line: typedef
   openDialog(step) {
 
